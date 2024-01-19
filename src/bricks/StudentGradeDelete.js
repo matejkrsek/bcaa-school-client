@@ -13,13 +13,16 @@ export default function StudentGradeDelete({ grade, onDelete, onError }) {
 
     setDeleteGradeCall({ state: "pending" });
 
-    const res = await fetch(`http://localhost:3000/grade/delete`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id: grade.id }),
-    });
+    const res = await fetch(
+      `https://bcaa-school-server-53cb238be4b6.herokuapp.com/grade/delete`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: grade.id }),
+      }
+    );
 
     const data = await res.json();
 

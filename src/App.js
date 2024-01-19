@@ -52,9 +52,12 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:3000/classroom/list`, {
-      method: "GET",
-    }).then(async (response) => {
+    fetch(
+      `https://bcaa-school-server-53cb238be4b6.herokuapp.com/classroom/list`,
+      {
+        method: "GET",
+      }
+    ).then(async (response) => {
       const responseJson = await response.json();
       if (response.status >= 400) {
         setListClassroomsCall({ state: "error", error: responseJson });

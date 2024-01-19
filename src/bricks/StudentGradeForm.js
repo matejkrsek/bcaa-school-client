@@ -80,7 +80,9 @@ export default function StudentGradeForm({
     // ukládáme přidanou známku na server -- ternární operátor nám na základě existence grade nastaví call na /update nebo / create
     setStudentAddGradeCall({ state: "pending" });
     const res = await fetch(
-      `http://localhost:3000/grade/${grade ? "update" : "create"}`,
+      `https://bcaa-school-server-53cb238be4b6.herokuapp.com/grade/${
+        grade ? "update" : "create"
+      }`,
       {
         method: "POST",
         headers: {

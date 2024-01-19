@@ -62,7 +62,7 @@ function StudentSubjectGradeList({ student, subject, classroom }) {
     setStudentSubjectGradeListCall({ state: "pending" });
 
     const res = await fetch(
-      `http://localhost:3000/grade/list?subjectId=${subject.id}&studentId=${student.id}`
+      `https://bcaa-school-server-53cb238be4b6.herokuapp.com/grade/list?subjectId=${subject.id}&studentId=${student.id}`
     );
     const data = await res.json();
 
