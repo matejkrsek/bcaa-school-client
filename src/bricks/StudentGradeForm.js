@@ -13,10 +13,6 @@ export default function StudentGradeForm({
 }) {
   useEffect(() => {
     if (grade) {
-      console.log("grade.dateTs:", grade.dateTs);
-      console.log("grade:", grade);
-      console.log("grade.weight:", grade.weight);
-
       setFormData({
         description: grade.description,
         dateTs: new Date(grade.dateTs).toISOString().substring(0, 10),
